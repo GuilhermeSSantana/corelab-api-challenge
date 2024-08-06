@@ -6,3 +6,13 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model blocoNotas {
+  id        String   @id @default(uuid())
+  titulo    String
+  texto     String
+  color     String
+  favoritos Boolean
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
